@@ -36,8 +36,11 @@ jobs:
       run: go get -u golang.org/x/lint/golint
 
     - name: Build
-      run: make && make lint
-    
+      run: GOOS=linux GOARCH=amd64 make server && make lint
+
+    - name: ls
+      run: cd server && ls -lh
+
     - name: Archive code coverage results
       uses: actions/upload-artifact@v2
       with:
