@@ -16,4 +16,4 @@ before_script:
   - go get -u golang.org/x/lint/golint
 
 script:
-  - make && make lint && make test && make test-backends && make docker
+  - make && make lint
